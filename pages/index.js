@@ -93,6 +93,31 @@ export default function Home({ products }) {
         .title,
         .description {
           text-align: center;
+          text-transform: uppercase;
+        }
+
+        ul {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          list-style-type: none;
+          row-gap: 20px;
+          column-gap: 20px;
+        }
+
+        ul li {
+          height: 60px;
+          border: 3px solid #79c1df;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          cursor: pointer;
+          transition: background-color 0.5s;
+        }
+
+        ul li:hover {
+          background-color: #89ddff;
+          color: #fff;
         }
       `}</style>
 
