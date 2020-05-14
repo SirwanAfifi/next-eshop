@@ -1,5 +1,7 @@
 import Head from "next/head";
 import fetch from "node-fetch";
+import Link from "next/link";
+import { slugify } from "../utils";
 
 export default function Home({ products }) {
   return (
@@ -14,7 +16,12 @@ export default function Home({ products }) {
 
         <ul>
           {products.map((product) => (
-            <li key={product.product_id}>{product.name}</li>
+            <Link
+              key={product.product_id}
+              href={`/products/${slugify(product.name)}`}
+            >
+              <li>{product.name}</li>
+            </Link>
           ))}
         </ul>
       </main>
